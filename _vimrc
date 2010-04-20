@@ -40,6 +40,8 @@
   let mapleader 	= ","
   let g:mapleader = ","
 
+  "Minibufexplorer
+  noremap <leader>q :Bclose
 
 	" NERDTree {
 		nmap	  <silent> <F7> :NERDTreeToggle<CR>
@@ -50,8 +52,8 @@
 	inoremap <leader>fn <C-R>=expand("%:t:r")<CR>
 
   " PHPDoc keymaps {  
-		nnoremap <leader>p :call PhpDocSingle()<CR> 
-		vnoremap <leader>p :call PhpDocRange()<CR> 
+		nnoremap <leader>d :call PhpDocSingle()<CR> 
+		vnoremap <leader>d :call PhpDocRange()<CR> 
 	" }
 " }
 
@@ -105,20 +107,6 @@
   language mes en
   set langmenu=en_US.UTF-8
 
-" OS Specific {  
-  let os = substitute(system('uname'), "\n", "", "")
-  if os == "Darwin"
-    " Darwin Specific stuff
-    source ~/.vimrc_env
-  elseif os == "Windows"
-    source $VIMRUNTIME/vimrc_example.vim
-    source $VIMRUNTIME/mswin.vim
-    behave mswin
-    set guifont=consolas:h10
-    source $VIMRUNTIME/vimrc_env
-  endif
-" }
-
 " DIFF { 
 set diffexpr=MyDiff()
   function MyDiff() " {
@@ -145,5 +133,3 @@ set diffexpr=MyDiff()
     silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
   endfunction " }
 " }
-
-set guifont=Consolas:h10:cANSI
