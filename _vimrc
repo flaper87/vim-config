@@ -7,10 +7,10 @@
   set backspace="indent,eol,start"  " make backspace a more flexible
   set nobackup                      " No backup!
   set iskeyword+=_,$,@,%,#          " none of these are word dividers
-  set noerrorbells                  " Do not make noises!
+  set noerrorbells                  " Do not make any noise!
 " }
 " UI {
-  colorscheme desertEx            " This is my favorite colorscheme
+  colorscheme desertEx          " 
   set cursorline                " Highlight the current line
   set scrolloff=8               " Keep x line for scope while scrolling
   set sidescrolloff=8           " same same 
@@ -18,9 +18,10 @@
   set number                    " Show line numbers in gutter
   set ruler                     " Always show current position along the bottom
   set showcmd                   " Show the command being typed
-  " @todo: check if there is a gui.
-  " set lines=40                  " This is my window size 
-  " set columns=100               " 
+  if has('gui_running')
+   set lines=40                  "
+   set columns=100               "
+  endif
   set listchars=trail:¤,tab:>-
   set list
 " }
@@ -32,15 +33,15 @@
   set ignorecase                " case sensitivity is dumb
   set smartcase                 " if there are case, go case sensitive
   set nowrap                    " No, I don't want wordwrap
-  set tabstop=2                 " 
-  set shiftwidth=2              " 
+  set tabstop=2                 "
+  set shiftwidth=2              "
   set expandtab                 " We do not want tabs, do we?
 " }
 
 " KEYMAP {
 
-	" Changing leader
-  let mapleader 	= ","
+  " Changing leader
+  let mapleader   = ","
   let g:mapleader = ","
 
   nmap <silent> <F8> :set list!<CR>
@@ -48,18 +49,17 @@
   "Minibufexplorer
   noremap <leader>q :Bclose
 
-	" NERDTree {
-		nmap	  <silent> <F7> :NERDTreeToggle<CR>
-	" }
-		
-	noremap <leader>O  O<ESC> 											 
+  " NERDTree {
+    nmap    <silent> <F7> :NERDTreeToggle<CR>
+  " }
+
   noremap <leader>f :g.function<CR>
-	inoremap <leader>fn <C-R>=expand("%:t:r")<CR>
+  inoremap <leader>fn <C-R>=expand("%:t:r")<CR>
 
   " PHPDoc keymaps {  
-		nnoremap <leader>d :call PhpDocSingle()<CR> 
-		vnoremap <leader>d :call PhpDocRange()<CR> 
-	" }
+    nnoremap <leader>d :call PhpDocSingle()<CR> 
+    vnoremap <leader>d :call PhpDocRange()<CR> 
+  " }
 " }
 
 " Folding {
@@ -68,22 +68,23 @@
   set foldmethod=marker                            " Fold on the marker
   set foldlevel=100                                " Do not autofold anything (but i can still fold manually)
   set foldopen=block,hor,mark,percent,quickfix,tag " what movements open folds
-  
+
   function SimpleFoldText() " {
-    return getline(v:foldstart).' ' 
+    return getline(v:foldstart).' '
   endfunction " }
-  set foldtext=SimpleFoldText() 									 " Custom fold function (cleaner than default)
+  set foldtext=SimpleFoldText()                    " Custom fold function (cleaner than default)
 " }
 
 "Plugin settings {
+
   " TagList settings {
     let Tlist_Auto_Open=0
     let Tlist_Sort_Type = "name" " order by
-      
       " language specific {
       let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in freaking php
-      " } 
-  " }  
+      " }
+  " }
+
   " MiniBufXplorer settings {
     let g:miniBufExplMaxSize            = 2
     let g:miniBufExplMapWindowNavVim    = 1
@@ -91,6 +92,7 @@
     let g:miniBufExplMapCTabSwitchBufs  = 1
     let g:miniBufExplModSelTarget       = 1
   " }
+
   " PDV {
     let g:pdv_cfg_Author = ""
     let g:pdv_cfg_Version = "$Id$"
