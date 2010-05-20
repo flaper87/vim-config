@@ -45,9 +45,11 @@
   let g:mapleader = ","
 
   nmap <silent> <F8> :set list!<CR>
+  nmap <silent> <F9> :set wrap!<CR>
+  nmap <silent> <F10> :%s/^\s\+$//g<CR>
 
   "Minibufexplorer
-  noremap <leader>q :Bclose
+  noremap <leader>q :Bclose<CR>
 
   " NERDTree {
     nmap    <silent> <F7> :NERDTreeToggle<CR>
