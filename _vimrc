@@ -44,21 +44,20 @@
   let mapleader   = ","
   let g:mapleader = ","
 
-  nmap <silent> <F8> :set list!<CR>
-  nmap <silent> <F9> :set wrap!<CR>
-  nmap <silent> <F10> :%s/^\s\+$//g<CR>
+  nmap <silent> <C-F8> :set list!<CR>
+  nmap <silent> <C-F9> :set wrap!<CR>
+  nmap <silent> <C-F10> :%s/^\s\+$//g<CR>
 
   "Minibufexplorer
   noremap <leader>q :Bclose<CR>
 
   " NERDTree {
-    nmap    <silent> <F7> :NERDTreeToggle<CR>
+    nmap    <silent> <C-F7> :NERDTreeToggle<CR>
   " }
 
   noremap <leader>f :g.function<CR>
-  inoremap <leader>fn <C-R>=expand("%:t:r")<CR>
 
-  " PHPDoc keymaps {  
+  " PHPDoc keymaps {
     nnoremap <leader>d :call PhpDocSingle()<CR> 
     vnoremap <leader>d :call PhpDocRange()<CR> 
   " }
@@ -83,7 +82,7 @@
     let Tlist_Auto_Open=0
     let Tlist_Sort_Type = "name" " order by
       " language specific {
-      let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in freaking php
+      let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in php
       " }
   " }
 
@@ -98,6 +97,10 @@
   " PDV {
     let g:pdv_cfg_Author = ""
     let g:pdv_cfg_Version = "$Id$"
+  " }
+
+  " debugger {
+  let g:debuggerMiniBufExpl = 1
   " }
 " }
 
