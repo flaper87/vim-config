@@ -4,7 +4,7 @@
 " }
 " General {
   filetype plugin indent on
-  set backspace="indent,eol,start"  " make backspace a more flexible
+  set backspace=indent,eol,start    " make backspace a bit more flexible
   set nobackup                      " No backup!
   set iskeyword+=_,$,@,%,#          " none of these are word dividers
   set noerrorbells                  " Do not make any noise!
@@ -46,7 +46,12 @@
 
   nmap <silent> <C-F8> :set list!<CR>
   nmap <silent> <C-F9> :set wrap!<CR>
+
+  " Delete line filled of space
   nmap <silent> <C-F10> :%s/^\s\+$//g<CR>
+
+  " page down with <Space>
+  nmap <Space> <PageDown>
 
   "Minibufexplorer
   noremap <leader>q :Bclose<CR>
@@ -56,10 +61,12 @@
   " }
 
   noremap <leader>f :g.function<CR>
+  noremap <leader>n :NERDTreeToggle<CR>
+  noremap <leader>t :TlistToggle<CR>
 
   " PHPDoc keymaps {
-    nnoremap <leader>d :call PhpDocSingle()<CR> 
-    vnoremap <leader>d :call PhpDocRange()<CR> 
+    nnoremap <leader>d :call PhpDocSingle()<CR>
+    vnoremap <leader>d :call PhpDocRange()<CR>
   " }
 " }
 
