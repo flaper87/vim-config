@@ -49,6 +49,7 @@
 
   " Delete line filled of space
   nmap <silent> <C-F10> :%s/^\s\+$//g<CR>
+  nmap <silent> <C-S-F10> :set et|retab<CR>
 
   " page down with <Space>
   nmap <Space> <PageDown>
@@ -68,6 +69,10 @@
     nnoremap <leader>d :call PhpDocSingle()<CR>
     vnoremap <leader>d :call PhpDocRange()<CR>
   " }
+
+  " Align {
+    vnoremap <leader>ta :Align =><CR>
+  " }
 " }
 
 " Folding {
@@ -77,17 +82,26 @@
   set foldlevel=100                                " Do not autofold anything (but i can still fold manually)
   set foldopen=block,hor,mark,percent,quickfix,tag " what movements open folds
 
-  function SimpleFoldText() " {
-    return getline(v:foldstart).' '
-  endfunction " }
+  if exists("SimpleFoldText") " {
+    function SimpleFoldText()
+      return getline(v:foldstart).' '
+    endfunction
+  endif
+
   set foldtext=SimpleFoldText()                    " Custom fold function (cleaner than default)
 " }
 
 "Plugin settings {
 
+  " NERDTree settings {
+    let g:NERDTreeWinPos = "right"
+  " }
+
   " TagList settings {
     let Tlist_Auto_Open=0
+    let Tlist_Use_Right_Window=0
     let Tlist_Sort_Type = "name" " order by
+    "
       " language specific {
       let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in php
       " }
