@@ -22,7 +22,6 @@
    set lines=40                  "
    set columns=100               "
   endif
-  set listchars=trail:¤,tab:>-
   set list
 " }
 " EDITING {
@@ -136,4 +135,6 @@
   autocmd insertEnter *.yml set cursorcolumn
 
 " I want english!
-  set langmenu=en_US.UTF-8
+set langmenu=en_US.UTF-8
+" Here because otherwise there is some problem on windows?!
+set listchars=trail:¤,tab:>-
