@@ -60,6 +60,12 @@
 'snippets'	snipMate.txt	/*'snippets'*
 .snippet	snipMate.txt	/*.snippet*
 .snippets	snipMate.txt	/*.snippets*
+:Ack	ack.txt	/*:Ack*
+:AckAdd	ack.txt	/*:AckAdd*
+:AckFile	ack.txt	/*:AckFile*
+:AckFromSearch	ack.txt	/*:AckFromSearch*
+:LAck	ack.txt	/*:LAck*
+:LAckAdd	ack.txt	/*:LAckAdd*
 :MatchDebug	matchit.txt	/*:MatchDebug*
 :NERDTree	NERD_tree.txt	/*:NERDTree*
 :NERDTreeClose	NERD_tree.txt	/*:NERDTreeClose*
@@ -191,6 +197,9 @@ Tlist_Set_App()	taglist.txt	/*Tlist_Set_App()*
 Tlist_Update_File_Tags()	taglist.txt	/*Tlist_Update_File_Tags()*
 [%	matchit.txt	/*[%*
 ]%	matchit.txt	/*]%*
+ack	ack.txt	/*ack*
+ack-author	ack.txt	/*ack-author*
+ack.txt	ack.txt	/*ack.txt*
 align	Align.txt	/*align*
 align-align	Align.txt	/*align-align*
 align-codepoint	Align.txt	/*align-codepoint*
@@ -380,6 +389,11 @@ v_a%	matchit.txt	/*v_a%*
 v_g%	matchit.txt	/*v_g%*
 vgS	surround.txt	/*vgS*
 vs	surround.txt	/*vs*
+xml-plugin-callbacks	xml-plugin.txt	/*xml-plugin-callbacks*
+xml-plugin-html	xml-plugin.txt	/*xml-plugin-html*
+xml-plugin-mappings	xml-plugin.txt	/*xml-plugin-mappings*
+xml-plugin-settings	xml-plugin.txt	/*xml-plugin-settings*
+xml-plugin.txt	xml-plugin.txt	/*xml-plugin.txt*
 yS	surround.txt	/*yS*
 ySS	surround.txt	/*ySS*
 ys	surround.txt	/*ys*
