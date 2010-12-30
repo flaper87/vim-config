@@ -134,6 +134,10 @@
     let g:pdv_cfg_Version = "$Id$"
   " }
 
+  " local vimrc {
+    let g:localvimrc_ask = 0
+  " }
+
   " debugger {
     let g:debuggerMiniBufExpl = 1
   " }
