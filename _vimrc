@@ -92,12 +92,16 @@
 " }
 
 "Plugin settings and keymaps {
+  " Keymaps
+    inoremap jj <Esc>
 
   " Ack {
-    let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+    let g:ackprg="ack-grep -H --nocolor --nogroup --column --ignore-dir=build"
     noremap <leader>s     :Ack 
     noremap <leader>st    :Ack --ignore-dir=symfony --ignore-dir=Symfony2 todo<CR>
   " }
+  "
+    nmap <unique> <silent> <leader>f :CommandT<CR>
 
   " Align {
     let g:loaded_AlignMapsPlugin = "v41"
