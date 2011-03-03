@@ -109,7 +109,7 @@
     noremap <leader>st    :Ack --ignore-dir=symfony --ignore-dir=Symfony2 todo<CR>
   " }
   "
-    nmap <unique> <silent> <leader>f :CommandT<CR>
+    nmap <silent> <leader>f :CommandT<CR>
 
   " Align {
     let g:loaded_AlignMapsPlugin = "v41"
