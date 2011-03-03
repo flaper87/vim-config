@@ -6,7 +6,7 @@
   filetype plugin indent on
   set backspace=indent,eol,start    " make backspace a bit more flexible
   set nobackup                      " No backup!
-  set iskeyword+=_,$,@,%,#          " none of these are word dividers
+  set iskeyword+=_,@,%,#            " none of these are word dividers
   set noerrorbells                  " Do not make any noise!
 " }
 " UI {
@@ -54,7 +54,7 @@
   " page down with <Space>
   nmap <Space> <PageDown>
 
-  "Minibufexplorer
+  " Minibufexplorer
   noremap <leader>q  :Bclose<CR>
   noremap <leader>q! :Bclose!<CR>
 
@@ -94,6 +94,14 @@
 "Plugin settings and keymaps {
   " Keymaps
     inoremap jj <Esc>
+
+  " CamelCase move
+    map <silent> W <Plug>CamelCaseMotion_w
+    map <silent> B <Plug>CamelCaseMotion_b
+    map <silent> E <Plug>CamelCaseMotion_e
+    sunmap W
+    sunmap B
+    sunmap E
 
   " Ack {
     let g:ackprg="ack-grep -H --nocolor --nogroup --column --ignore-dir=build"
@@ -153,6 +161,8 @@
 " yaml specific
   autocmd insertLeave *.yml set nocursorcolumn
   autocmd insertEnter *.yml set cursorcolumn
+
+  autocmd BufRead *.twig set filetype=htmltwig
 
 " I want english!
 set langmenu=en_US.UTF-8
